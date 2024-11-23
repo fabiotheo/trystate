@@ -75,17 +75,16 @@ export const tryState = async <T>(
     } catch (error) {
         const executionTimeMs = Date.now() - start; // Calcula o tempo até o erro
         const stack = (error as Error).stack || '';
-        const stackLines = stack.split('\n');
-        const relevantLine = stackLines[1]?.trim() || 'Localização não encontrada';
-        const functionNameMatch = relevantLine.match(/at (\S+)/); // Extrai o nome da função
-        const functionName = functionNameMatch ? functionNameMatch[1] : 'unknown';
+        const message = (error as Error).message || 'An unknown error occurred';
+
+        // Converte qualquer coisa em um objeto
+        const errorObject = typeof error === 'object' && error !== null ? error : { error };
 
         const errorDetails: ErrorProps = {
-            message: (error as Error).message,
+            message,
             stack,
-            function: functionName,
-            location: relevantLine,
-            ...additionalContext,
+            ...errorObject, // Espalha propriedades adicionais
+            ...additionalContext, // Adiciona contexto adicional, se houver
         };
 
         return [

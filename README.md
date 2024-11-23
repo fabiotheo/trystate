@@ -1,6 +1,6 @@
 # @ipcom/try-state
 
-[![npm version](https://badge.fury.io/js/%40ipcom%2Ftry-state.svg)](https://www.npmjs.com/package/@ipcom/try-state)
+[![npm version](https://img.shields.io/npm/v/@ipcom/try-state.svg)](https://www.npmjs.com/package/@ipcom/try-state)
 
 A utility function for handling asynchronous operations with error handling in TypeScript.
 
