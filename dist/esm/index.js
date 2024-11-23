@@ -1,3 +1,2 @@
-var p=async(c,i,m)=>{let o=Date.now(),r=new Date().toISOString();try{let t=await c(),n=Date.now()-o;return[t,null,{executionTimeMs:n,timestamp:r}]}catch(t){let n=Date.now()-o,e=t.stack||"",s=e.split(`
-`)[1]?.trim()||"Localiza\xE7\xE3o n\xE3o encontrada",a=s.match(/at (\S+)/),u=a?a[1]:"unknown",l={message:t.message,stack:e,function:u,location:s,...m};return[i,l,{executionTimeMs:n,timestamp:r}]}},T=p;export{T as default,p as tryState};
+var m=async(s,n,c)=>{let e=Date.now(),o=new Date().toISOString();try{let r=await s(),t=Date.now()-e;return[r,null,{executionTimeMs:t,timestamp:o}]}catch(r){let t=Date.now()-e,a=r.stack||"",i={message:r.message||"An unknown error occurred",stack:a,...typeof r=="object"&&r!==null?r:{error:r},...c};return[n,i,{executionTimeMs:t,timestamp:o}]}},p=m;export{p as default,m as tryState};
 //# sourceMappingURL=index.js.map
