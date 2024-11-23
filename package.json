@@ -1,0 +1,37 @@
+{
+  "name": "@ipcom/try-state",
+  "version": "0.1.1",
+  "type": "module",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js",
+    "start": "node dist/esm/index.js",
+    "docs": "typedoc --out docs/ src/ && touch docs/.nojekyll"
+  },
+  "keywords": [
+    "typescript",
+    "error-handling",
+    "try-catch",
+    "utility"
+  ],
+  "author": "Fabio Theodoro <fabio@ipcom.com.br>",
+  "license": "MIT",
+  "description": "Utility function for error handling in TypeScript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabiotheo/try-state.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fabiotheo/try-state/issues"
+  },
+  "homepage": "https://github.com/fabiotheo/try-state#readme",
+  "devDependencies": {
+    "@types/node": "^22.9.3",
+    "esbuild": "^0.24.0",
+    "typedoc": "^0.26.11",
+    "typescript": "^5.7.2"
+  }
+}
